@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging-environment-metaphor
+  name: production-environment-metaphor
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,11 +11,11 @@ spec:
   project: default
   source:
     repoURL: <GITOPS_REPO_URL>
-    path: registry/environments/staging/metaphor
+    path: registry/clusters/<CLUSTER_NAME>/components/metaphor/production
     targetRevision: HEAD
   destination:
     name: <WORKLOAD_CLUSTER_NAME>
-    namespace: staging
+    namespace: production
   syncPolicy:
     automated:
       prune: true
