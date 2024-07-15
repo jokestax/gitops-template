@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: '45'
+    argocd.argoproj.io/sync-wave: '500'
 spec:
   project: default
   source:
@@ -23,4 +23,3 @@ spec:
     syncOptions:
       - CreateNamespace=true
 
-      
